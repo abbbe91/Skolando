@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Skolando, Damskor</title>
+<link href="Skolando.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div id="container">
+ <header>
+	<a href="index2.php?visaForstaSida">
+		<img src="logo.png" alt="skolando" />
+	</a>
+ </header>
+
+
+<nav>
+<a href="index2.php?visaForstaSida">
+  <div id ="hemknapp">
+    <span>Hem |</span>
+  </div>
+</a>
+
+<a href="index2.php?getAllHerr">
+  <div id ="herrknapp">
+    <span>Herrskor |</span>
+  </div>
+</a>
+
+<a href="index2.php?getAllDam">
+  <div id ="damknapp">
+    <span>Damskor |</span>
+ </div>
+</a>
+
+<a href="index2.php?getAllBarn">
+ <div id ="barnknapp">
+ <span>Barnskor |</span>
+ </div>
+ </a>
+
+  <div id ="omföretaget">
+  <span>Om företaget | </span>
+ </div>
+
+  <div id ="fraktretur">
+  <span>Frakt och Retur |</span>
+ </div>
+
+<a href="index2.php?login" >
+    <div id ="loggain">
+    <span>Logga in |</span>
+    </div>
+    </a>
+
+
+    
+
+   <div id ="sokfalt">
+
+<div id ="varukorg">
+    <a href="index2.php?showCart">
+  <img src="kundvagn.png" alt="Thumb1" title="Kundvagn"/>
+    </a>
+  </div>
+
+   <form id="searchbox" action="">
+      <input id="search" type="text" placeholder="Sök efter produkt">
+  	<input id="submit" type="submit" value="Sök">
+    </form>
+    </div>
+</nav>
+    <div id="BreadCrumbs">
+        <span>Du är här: <a href="Skolando.html">Hem</a> >> <a href="SkolandoDam.html">Damskor</a>
+        </span>
+    </div>
+<main>
+{%for sko in skor%}
+     <a href="index2.php?getSkoByArtnr/{{sko.Artikelnummer}}">
+  <div id = "herrtabell">     
+          
+               <ul>
+               <li><img src="{{sko.Sokvag}}"/></li>
+               <li>{{sko.Namn}}</li>
+               <li>{{sko.Pris}}</li>
+               </ul>         
+  </div>
+     </a>
+    {%endfor%} 
+</main>
+
+<footer>
+
+
+
+<div id="kontakt">
+
+	<h3>Kundservice</h3>
+    <br />
+	<p><b>Kontakt: 0771-00 00 00<br>
+	Vanliga frågor / Svar<br>
+	E-post: skolando@kundtjanst.com<br>
+	Om företaget</p></b>
+
+
+
+
+</div>
+
+<div id="socialmedia">
+<h2>Betalningssätt:</h2>
+<br />
+<img src="visa2.jpg" alt="Thumb1" title="Visa"/>
+<img src="Mastercard.jpg" alt="Thumb2" title="Mastercard" />
+<img src="klarna.jpg" alt="Thumb3" title="Klarna" />
+<img src="ehandel.png" alt="Thumb4" title="Trygg E-handel"/>
+
+</div>
+
+<div id="socialmedia2">
+    <h1>Följ skolando på nätet</h1>
+    <br />
+<img src="fb.svg" alt="Thumb1" title="Facebook" />
+<img src="instagram.svg" alt="Thumb2" title="Instagram" />
+<img src="yt.svg" alt="Thumb3" title="youtube" />
+</div>
+
+
+
+
+
+
+ </footer>
+
+<div id="clearfix"></div>
+<div>
+<p>
+<a href="http://validator.w3.org/check?uri=referer"><img
+src="http://www.w3.org/html/logo/downloads/HTML5_Logo_64.png"
+alt="Valid HTML5" height="50" width="50"
+style="border:0;" /></a>
+</p>
+<p>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+<img style="border:0;width:88px;height:31px"
+src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+alt="Valid CSS!" />
+</a>
+</p>
+</div>
+
+
+</div>
+</body>
+</html>

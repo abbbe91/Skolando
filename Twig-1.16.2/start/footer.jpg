@@ -1,0 +1,33 @@
+<footer>
+<ul>
+<li>
+<pre>
+Kontakta oss:
+073-9602886
+skolando@kundtjänst</pre>
+</li>
+<li><pre>Betalsätt:
+
+<img src="Visa.png" alt="Thumb" /> <img src="Mastercard.png" alt="Thumb" /> <img src="klarna.png" alt="Thumb" /><img src="nordea.png" alt="Thumb" /></li>
+</pre></li>
+<li>
+<pre>
+<img src="fb.svg" alt="Thumb" title="Facebook" /> <img src="instagram.svg" alt="Thumb" title="Instagram" /> <img src="yt.svg" alt="Thumb" title="youtube" /></li>
+</pre>
+
+CSS
+
+</ul>
+</footer>
+
+footer li{
+ list-style-type:none;
+ text-align:left;
+ margin:auto;
+}
+footer li{
+width:100px;
+float:left;
+    margin:10px 250px 10px 30px;
+
+}

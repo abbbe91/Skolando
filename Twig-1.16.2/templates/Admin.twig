@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<link href="Skolando.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<div id="container">
+ <header>
+	<a href="index2.php?visaForstaSida">
+		<img src="logo.png" alt="skolando" />
+	</a>
+ </header>
+
+
+<nav>
+<a href="index2.php?visaForstaSida">
+  <div id ="hemknapp">
+    <span>Hem |</span>
+  </div>
+</a>
+
+<a href="index2.php?getAllHerr">
+  <div id ="herrknapp">
+    <span>Herrskor |</span>
+  </div>
+</a>
+
+<a href="index2.php?getAllDam">
+  <div id ="damknapp">
+    <span>Damskor |</span>
+ </div>
+</a>
+
+<a href="index2.php?getAllBarn">
+ <div id ="barnknapp">
+ <span>Barnskor |</span>
+ </div>
+ </a>
+
+  <div id ="omföretaget">
+  <span>Om företaget | </span>
+ </div>
+
+  <div id ="fraktretur">
+  <span>Frakt och Retur |</span>
+ </div>
+    
+    <a href="index2.php?login" >
+    <div id ="loggain">
+    <span>Logga in |</span>
+    </div>
+    </a>
+
+<div id ="sokfalt">
+
+<div id ="varukorg">
+    <a href="index2.php?showCart">
+  <img src="kundvagn.png" alt="Thumb1" title="Kundvagn" width="60%" height="80%"/>
+    </a>
+  </div>
+
+   <form id="searchbox" action="">
+      <input id="search" type="text" placeholder="Sök efter produkt"/>
+  	<input id="submit" type="submit" value="Sök"/>
+    </form>
+    </div>
+</nav>
+
+<div id="admindiv">
+
+    <table id = "admintabell">
+        <thead>
+            <tr>
+            <th>Ikon</th>
+            <th>Kategori</th>
+            <th>Namn</th>
+            <th>Artikelnummer</th>
+            <th>Antal</th>
+            <th>Storlek</th>
+            <th>Pris</th>
+            <th>Ta bort</th>
+            </tr>
+        </thead>
+        <tbody>
+        {%for sko in allShoes%}
+            <tr>
+               <td><img src="{{sko.Sokvag}}"/></td>
+               <td>{{sko.Kategori}}</td>
+               <td>{{sko.Namn}}</td>
+               <td>{{sko.Artikelnummer}}</td>
+               <td>{{sko.Antal}}</td>
+               <td>{{sko.Storlek}}</td>
+               <td>{{sko.Pris}}</td>
+
+                <td>
+                <a href="index2.php?deleteShoe/{{sko.Artikelnummer}}">
+                Ta bort
+                </a>
+                </td>
+                
+                <td>
+                <a href="index2.php?showUpdateForm/{{sko.Artikelnummer}}">
+                Uppdatera
+                </a>
+                </td>
+              
+            </tr>
+        {%endfor%}
+        
+        
+       </tbody>                    
+    </table>
+       
+       <a href="index2.php?showAddForm">
+       <div id="addbutton">
+           <p>Lägg till produkt</p> 
+       </div>
+       </a>
+</div>
+<footer>
+</footer>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title></title>
+        <link href="Skolando.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <div id="container">
+            <header>
+                <a href="index2.php?visaForstaSida">
+                    <img src="logo.png" alt="skolando" />
+                </a>
+            </header>
+
+
+            <nav>
+                <a href="index2.php?visaForstaSida">
+                    <div id ="hemknapp">
+                        <span>Hem |</span>
+                    </div>
+                </a>
+
+                <a href="index2.php?getAllHerr">
+                    <div id ="herrknapp">
+                        <span>Herrskor |</span>
+                    </div>
+                </a>
+
+                <a href="index2.php?getAllDam">
+                    <div id ="damknapp">
+                        <span>Damskor |</span>
+                    </div>
+                </a>
+
+                <a href="index2.php?getAllBarn">
+                    <div id ="barnknapp">
+                        <span>Barnskor |</span>
+                    </div>
+                </a>
+
+                <div id ="omföretaget">
+                    <span>Om företaget | </span>
+                </div>
+
+                <div id ="fraktretur">
+                    <span>Frakt och Retur |</span>
+                </div>
+
+                <a href="index2.php?login" >
+                    <div id ="loggain">
+                        <span>Logga in |</span>
+                    </div>
+                </a>
+
+                <div id ="sokfalt">
+
+                    <div id ="varukorg">
+                        <a href="index2.php?showCart">
+                        <img src="kundvagn.png" alt="Thumb1" title="Kundvagn" width="60%" height="80%"/>
+                        </a>
+                    </div>
+
+
+                </div>
+            </nav>
+
+            <main>
+
+                
+
+                {%for artSko in artskor%}
+                    <legend>Uppdatera Sko</legend> 
+                    <br/>
+                    <p>Artikelnummer att uppdatera:{{artSko.Artikelnummer}}</p>
+                    
+                    <form action="index2.php?updateShoe/{{artSko.Artikelnummer}}" method="POST" class="pure-form pure-form-stacked">
+                        <fieldset>
+                            
+                            <br/>
+                            <label>Kategori:</label>
+                            <br/>
+                            <input type="text" name="Kategori" value="{{artSko.Kategori}}"/>
+                            <br/>
+                            <label>Namn:</label>
+                            <br/>
+                            <input type="text" name="Namn" value="{{artSko.Namn}}"/>
+                            <br/>
+                            <label>Antal:</label>
+                            <br/>
+                            <input type="text" name="Antal" value="{{artSko.Antal}}"/>
+                            <br/>
+                            <label>Storlek:</label>
+                            <br/>
+                            <input type="text" name="Storlek" value="{{artSko.Storlek}}"/>
+                            <br/>
+                            <label>Pris:</label>
+                            <br/>
+                            <input type="text" name="Pris" value="{{artSko.Pris}}"/>
+                            <br/>
+                            <label>Sokvag:</label>
+                            <br/>
+                            <input type="text" name="Sokvag" value="{{artSko.Sokvag}}"/>
+                            <br/>
+                            <button type="submit" class="pure-button pure-button-primary">Uppdatera</button>
+
+                        </fieldset>
+                    </form>
+                {%endfor%}
+
+
+
+
+            </main>
+            <footer>
+            </footer>
+        </div>
+    </body>
+</html>
+
+

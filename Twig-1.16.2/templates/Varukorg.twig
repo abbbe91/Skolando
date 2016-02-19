@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+
+        <title>Skolando, skor på nätet</title>
+        <link href="Skolando.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+
+
+        <div id="container">
+
+            <header>
+                <a href="index2.php?visaForstaSida">
+                    <img id = "logo" src="logo.png" alt="skolando"/>
+
+                </a>
+
+            </header>
+
+            <nav>
+                <a href="index2.php?visaForstaSida">
+                    <div id ="hemknapp">
+                        <p>Hem |</p>
+                    </div>
+                </a>
+
+                <a href="index2.php?getAllHerr">
+                    <div id ="herrknapp">
+
+                        <p>Herrskor |</p>
+
+                    </div>
+                </a>
+
+                <a href="index2.php?getAllDam">
+                    <div id ="damknapp">
+                        <p>Damskor |</p>
+                    </div>
+                </a>
+
+                <a href="index2.php?getAllBarn">
+                    <div id ="barnknapp">
+                        <p>Barnskor |</p>
+                    </div>
+                </a>
+
+                <div id ="omföretaget">
+                    <p>Om företaget | </p>
+                </div>
+
+                <div id ="fraktretur">
+                    <p>Frakt och Retur |</p>
+                </div>
+
+
+                <a href="index2.php?login" >
+                    <div id ="loggain">
+                        <span>Logga in |</span>
+                    </div>
+                </a>
+
+
+                <div id ="sokfalt">
+                    <a href="Varukorg.html">
+                        <div id="varukorg">
+                            <img src="kundvagn.png" alt="Thumb1" title="Kundvagn"  />
+                        </div>
+                    </a>
+
+                    <form id="searchbox" action="a">
+                        <input id="search" type="text" placeholder="Sök efter produkt">
+                        <input id="submit" type="submit" value="Sök">
+                    </form>
+                </div>
+            </nav>
+
+            <div id="BreadCrumbs">
+                <span>Du är här: <a href="Skolando.html">Hem</a>
+                </span>
+            </div>
+
+            <main>
+
+                <div id="varukorgen">
+
+                    <table style="width:85%">
+                        <tr>
+                            <th>Antal</th>
+                            <th>Varukorg:</th>
+                            <th>Artikelnamn</th>		
+                            <th>Pris</th>
+                            <th>Artikelnummer</th>
+                            <th>Ta Bort</th>
+                        </tr>
+
+                        {%for sko in vagnarray%}
+
+                            {% if sko[0].Namn == '' %}
+
+                            {% else%}
+
+
+
+                                <tr>
+                                    <td><a href="index2.php?removeVaraFromCart/{{sko[0].Artikelnummer}}">-</a> {{sko[1]}} <a href="index2.php?addToCart/{{sko[0].Artikelnummer}}">+</a></td>
+
+                                    <td><img src="{{sko[0].Sokvag}}"/></td>
+                                    <td>{{sko[0].Namn}}</td>
+                                    <td>{{sko[0].Pris}}</td>
+                                    <td>{{sko[0].Artikelnummer}}</td>
+                                    <td><a href="index2.php?removeProdukttypFromCart/{{sko[0].Artikelnummer}}"><img id="hej" src="http://users.du.se/~h14allda/bilder/soppkorg.png"/></a></td>
+
+                                </tr> 
+
+
+
+                            {% endif %}
+                        {%endfor%} 
+
+                        <tr><td colspan="6" align="right">Att betala:{{attBetala|number_format(2,',','')}} kr </tr></td>
+                    </table> 
+                </div>
+
+            </main>
+
+            <footer>
+
+
+
+                <div id="kontakt">
+                    <h3>Kundservice</h3>
+                    <br />
+                    <p>Kontakt: 0771-00 00 00<br>
+                        Vanliga frågor / Svar<br>
+                        E-post: skolando@kundtjanst.com<br>
+                        Om företaget</p>
+
+
+                </div>
+
+                <div id="socialmedia">
+                    <h2>Betalningssätt:</h2>
+                    <br />
+                    <img class="betalbilder" src="visa2.jpg" alt="Thumb1" title="Visa"/>
+                    <img class="betalbilder" src="Mastercard.jpg" alt="Thumb2" title="Mastercard" />
+                    <img class="betalbilder" src="klarna.jpg" alt="Thumb3" title="Klarna" />
+                    <img class="betalbilder" src="ehandel.png" alt="Thumb4" title="Trygg E-handel" />
+
+                </div>
+
+                <div id="socialmedia2">
+                    <h1>Följ skolando på nätet</h1>
+                    <br />
+                    <img src="fb.svg" alt="Thumb1" title="Facebook" />
+                    <img src="instagram.svg" alt="Thumb2" title="Instagram" />
+                    <img src="yt.svg" alt="Thumb3" title="youtube" />
+                </div>
+
+
+
+
+
+
+            </footer>
+
+            <div id="clearfix">
+
+                <p>
+                    <a href="http://validator.w3.org/check?uri=referer"><img
+                            src="http://www.w3.org/html/logo/downloads/HTML5_Logo_64.png"
+                            alt="Valid HTML5" height="50" width="50"
+                            style="border:0;" /></a>
+                </p>
+                <p>
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                        <img style="border:0;width:88px;height:31px"
+                             src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                             alt="Valid CSS!" />
+                    </a>
+                </p>
+            </div>
+
+
+        </div>
+    </body>
+</html>
